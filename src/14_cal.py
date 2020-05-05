@@ -47,11 +47,7 @@ elif month:
   just_month(month)
 
 else:
-  print(datetime.today())
-
-
-
-
-
-
-
+  dt = datetime.today()
+  def just_month(month):
+    return calendar.TextCalendar().prmonth(theyear=2020, themonth=int(month))
+  just_month(dt.month)
