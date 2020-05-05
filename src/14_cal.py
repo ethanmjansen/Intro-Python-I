@@ -32,8 +32,8 @@ import calendar
 from datetime import datetime
 
 
-month = sys.argv[1] if len(sys.argv) >= 2 else None
-year = sys.argv[2] if len(sys.argv) >= 3 else None
+month = sys.argv[1] if len(sys.argv) >= 2 else datetime.today().month
+year = sys.argv[2] if len(sys.argv) >= 3 else datetime.today().year
 
 
 if month and year:
@@ -45,9 +45,3 @@ elif month:
   def just_month(month):
     return calendar.TextCalendar().prmonth(theyear=2020, themonth=int(month))
   just_month(month)
-
-else:
-  dt = datetime.today()
-  def just_month(month):
-    return calendar.TextCalendar().prmonth(theyear=2020, themonth=int(month))
-  just_month(dt.month)
